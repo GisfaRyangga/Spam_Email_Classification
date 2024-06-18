@@ -17,6 +17,6 @@ const appendAlert = (message, type) => {
 const alertTrigger = document.getElementById('liveAlertBtn')
 if (alertTrigger) {
   alertTrigger.addEventListener('click', () => {
-    appendAlert('EMAIL TERDETEKSI HAM')
+    appendAlert('')
   })
 }
