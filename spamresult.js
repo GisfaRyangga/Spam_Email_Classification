@@ -12,6 +12,7 @@ const appendAlert = (message, type) => {
 }
 
 // buat yang spam
+// <div class="alert alert-danger alert-dismissible" role="alert
 // <div><i class="bi bi-x-circle"></i> EMAIL TERDETEKSI SPAM</div>
 
 const alertTrigger = document.getElementById('liveAlertBtn')
