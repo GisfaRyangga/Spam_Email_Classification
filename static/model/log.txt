@@ -1,0 +1,55 @@
+-----==== STARTING PROGRAM ====-----
+-----==== FEATURE EXTRACTION ====-----
+-----==== STARTING DECISION TREE ====-----
+
+Decision Tress:
+
+Training Time          : 87.46608090400696 seconds
+Training Data Accuracy: 0.9998651846969652
+Testing Data Accuracy : 0.9642300778909527
+Precision             : 0.9652872003618272
+Recall                : 0.9671462558060496
+F1 Score              : 0.966215833852074
+-----==== STARTING LOGISTIC REGRESSION ====-----
+
+Logistic Regression:
+
+Training Time          : 9.3443443775177 seconds
+Training Data Accuracy: 0.9898289343599269
+Testing Data Accuracy : 0.984661473936489
+Precision             : 0.9775994650618522
+Recall                : 0.9937691174804577
+F1 Score              : 0.9856179775280899
+-----==== STARTING KNN ====-----
+
+K Nearest Neighbors:
+
+Training Time            : 0.020867347717285156 seconds
+Training Time (estimated): 226.28938579559326 seconds
+Training Data Accuracy   : 0.8629827136822553
+Testing Data Accuracy    : 0.8104254044337927
+Precision                : 0.7405079419009598
+Recall                   : 0.987651523733998
+F1 Score                 : 0.8464077669902912
+-----==== STARTING RANDOM FOREST ====-----
+
+Random Forest:
+
+Training Time          : 127.03563570976257 seconds
+Training Data Accuracy: 0.9998651846969652
+Testing Data Accuracy : 0.9826842420611145
+Precision             : 0.985665529010239
+Recall                : 0.9815339299875382
+F1 Score              : 0.9835953908156895
+-----==== STACKING CLASSIFIER ====-----
+
+Stacking Classifier:
+
+Training Time          : 1486.7185187339783 seconds
+Training Data Accuracy: 0.9990562928787561
+Testing Data Accuracy : 0.9886159376872379
+Precision             : 0.9871404399323181
+Recall                : 0.9913900532457234
+F1 Score              : 0.9892606827944833
+-----==== SAVING MODELS ====-----
+-----==== END ====-----
