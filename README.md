@@ -50,7 +50,8 @@ This is a basic Flask web application designed to serve as the front end for an 
 3. **Open a web browser and navigate to `http://127.0.0.1:5000/` to view the application.**
 
 
-## link stack.model --> https://drive.google.com/file/d/1ziIbm-rRGekKm9yIFSU0A_899hxuJ35-/view?usp=sharing
+** link stack.model ** --> https://drive.google.com/file/d/1ziIbm-rRGekKm9yIFSU0A_899hxuJ35-/view?usp=sharing
+** link feature_extraction.pkl **--> https://drive.google.com/file/d/1Is0PFmnfUmwcFL13YDHr4BNQISPmeCiE/view?usp=sharing
 
 
 <h2>Created with love of blood and tears</h2>
