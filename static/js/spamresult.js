@@ -1,25 +1,52 @@
-const alertPlaceholder = document.getElementById('OutputResult')
+const alertPlaceholder = document.getElementById('OutputResult');
+
+function returnAlertClass(type) {
+  if (type.toUpperCase().includes('HAM')) {
+    return 'alert-success';
+  } else if (type.toUpperCase().includes('SPAM')) {
+    return 'alert-danger';
+  } else {
+    return '';
+  }
+}
+
 const appendAlert = (message, type) => {
-  const wrapper = document.createElement('div')
-  wrapper.innerHTML = [
-    '<div class="alert alert-success alert-dismissible" role="alert">                             ',
-    '<div><i class="bi bi-check-circle"></i> EMAIL TERDETEKSI HAM</div>                           ',
-    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> ',
-    '</div>'
-  ].join('')
+  const alertClass = returnAlertClass(type)
+  const wrapper = document.createElement('div');
+  wrapper.className = `alert ${alertClass} alert-dismissible` // Use template literals for cleaner class assignment
+  wrapper.innerHTML = `
+    <div><i class="bi bi-check-circle"></i> EMAIL TERDETEKSI ${message}</div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  `;
+  alertPlaceholder.append(wrapper);
+};
 
-  // For Detected SPAM
-  // '<div class="alert alert-danger alert-dismissible" role="alert">                               ',
-  // '<div><i class="bi bi-check-circle"></i> EMAIL TERDETEKSI SPAM</div>                           ',
-  // '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>  ',
-  // '</div>'
+// const alertTrigger = document.getElementById('liveAlertBtn');
+// if (alertTrigger) {
+//   alertTrigger.addEventListener('click', () => {
+//     // You can remove this line as it doesn't seem to be doing anything specific
+//     // appendAlert('');
+//   });
+// }
 
-  alertPlaceholder.append(wrapper)
-}
+$(document).ready(function() {
+  $("#submit-button").click(function(event) {
+    event.preventDefault();
 
-const alertTrigger = document.getElementById('liveAlertBtn')
-if (alertTrigger) {
-  alertTrigger.addEventListener('click', () => {
-    appendAlert('')
-  })
-}
+    var emailText = $("#email-text").val();
+
+    $.ajax({
+      url: "/detect",
+      type: "POST",
+      data: { emailText: emailText },
+      success: function(response) {
+        const message = response === 'HAM' ? 'HAM' : 'SPAM';
+        appendAlert(message, response);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error("Error:", textStatus, errorThrown);
+        $("#OutputResult").html("Error occurred. Please try again.");
+      }
+    });
+  });
+});

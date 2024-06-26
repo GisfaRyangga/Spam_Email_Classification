@@ -25,21 +25,18 @@
     </div> -->
 
     <div class="container-fluid content">
-        <form class="mx-auto">
-            <h3 class="text-center">Spam Email Classification</h3>
-            <div class="mb-3 mt-5">
-              <label for="Email Text" class="form-label">Email Text</label>
-              <textarea class="form-control" id="floatingTextarea"></textarea>
-              
-            </div>
-            <div class="mb-3">
-              <label for="SpamResult" class="form-label">Result</label>
-              <div id="OutputResult"></div>
-              <!-- <input type="text" class="form-control" id="SpamResult"> -->
-            </div>
-          
-            <button type="button" class="btn btn-primary mt-5" id="liveAlertBtn">Submit</button>
-          </form>
+      <form id="email-form" class="mx-auto">
+        <h3 class="text-center">Spam Email Classification</h3>
+        <div class="mb-3 mt-5">
+          <label for="Email Text" class="form-label">Email Text</label>
+          <textarea class="form-control" id="email-text" rows="5"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="SpamResult" class="form-label">Result</label>
+          <div id="OutputResult"></div>
+        </div>
+        <button type="button" class="btn btn-primary mt-5" id="submit-button">Submit</button>
+      </form>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
