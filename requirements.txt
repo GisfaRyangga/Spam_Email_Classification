@@ -1,1 +1,4 @@
 Flask
+numpy==1.21.6
+scikit-learn==1.1.1
+joblib

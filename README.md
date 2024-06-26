@@ -12,7 +12,7 @@ This is a basic Flask web application designed to serve as the front end for an 
 
 ### Prerequisites
 
-- Python 3.10
+- Python 3.10.12
 - Virtual environment (optional but recommended)
 
 ### Steps to Set Up the Project
@@ -41,18 +41,27 @@ This is a basic Flask web application designed to serve as the front end for an 
 
 1. **Ensure you are in the project directory and the virtual environment is activated.**
 
-2. **Run the Flask application:**
+2. **Update the Google Drive paths in `app.py`:**
+
+    Open the `app.py` file and update the following paths with your Google Drive paths:
+    ```python
+    model_path = '[PATH]/stack.model'
+    feature_extraction_path = '[PATH]/feature_extraction.pkl'
+    index_html_path = '[PATH]/flask/templates/Index.html'
+    flask_template_path = '[PATH]/flask/templates'
+    flask_static_path = '[PATH]/flask/static'
+    ```
+
+3. **Run the Flask application:**
 
     ```sh
     flask run
     ```
 
-3. **Open a web browser and navigate to `http://127.0.0.1:5000/` to view the application.**
+4. **Open a web browser and navigate to `http://127.0.0.1:5000/` to view the application.**
 
 
-**link stack.model** --> https://drive.google.com/file/d/1ziIbm-rRGekKm9yIFSU0A_899hxuJ35-/view?usp=sharing
-
-**link feature_extraction.pkl**--> https://drive.google.com/file/d/1Is0PFmnfUmwcFL13YDHr4BNQISPmeCiE/view?usp=sharing
+**link to required files (Use UGM email / req access)** --> https://drive.google.com/drive/folders/1cRC29FftQzhIU0pNOWYAcucABzh_u7NE
 
 
 <h2>Created with love of blood and tears</h2>
