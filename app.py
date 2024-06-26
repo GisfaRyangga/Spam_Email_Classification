@@ -1,11 +1,21 @@
+from google.colab import drive
+
+drive.mount('/content/drive')
+
+model_path = '[PATH]/stack.model'
+feature_extraction_path = '[PATH]/feature_extraction.pkl'
+index_html_path = '[PATH]/flask/templates/Index.html'
+flask_template_path = '[PATH]/flask/templates'
+flask_static_path = '[PATH]/flask/static'
+
 from flask import Flask, render_template, request, jsonify
 import joblib
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder=flask_template_path,static_folder=flask_static_path)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('Index.html')
 
 @app.route('/detect', methods=['POST'])
 def detect_spam():
@@ -16,8 +26,8 @@ def detect_spam():
 
 # Replace this with your actual spam detection function
 def predict_spam(email_text):
-    model = joblib.load('./static/model/stack.model')
-    feature_extraction = joblib.load('./static/model/feature_extraction.pkl')
+    model = joblib.load(model_path)
+    feature_extraction = joblib.load(feature_extraction_path)
 
     input_mail_features = feature_extraction.transform([email_text])  # Wrap the email_text in a list
     prediction = model.predict(input_mail_features)
@@ -25,27 +35,4 @@ def predict_spam(email_text):
     return prediction[0] == 1
 
 if __name__ == "__main__":
-    app.run(debug=True)
-
-
-# @app.route('/yep', methods=['POST'])
-# def detect_spam():
-#     model = joblib.load('./static/model/stack.model')
-#     feature_extraction = joblib.load('./static/model/feature_extraction.pkl')
-
-#     def predict_spam(email_text):
-#         input_mail_features = feature_extraction.transform(email_text)
-#         prediction = model.predict(input_mail_features)
-
-#         if prediction == 0:
-#             return "HAM MAIL"
-#         else:
-#             return "SPAM MAIL"
-
-#     # implement fungsi
-#     input_mail = ["You're receiving this email because you turned on Location History, a Google Account-level setting that creates Timeline, a personal map of your visited places, routes, and trips."]
-#     result = predict_spam(input_mail)
-#     print(result)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
